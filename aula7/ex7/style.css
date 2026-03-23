@@ -1,0 +1,21 @@
+.container {
+ position: relative;
+ width: 400px;
+ height: 300px;
+ border: 2px solid #333;
+}
+
+.layer {
+ position: absolute;
+ width: 300px;
+ height: 200px;
+ padding: 20px;
+ border-radius: 8px;
+ box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.layer1 { background: rgba(255,0,0,0.5); z-index: 1; top: 0; left: 0; }
+.layer2 { background: rgba(0,255,0,0.5); z-index: 2; top: 20px; left: 20px; }
+.layer3 { background: rgba(0,0,255,0.5); z-index: 3; top: 40px; left: 40px; }
+.layer4 { background: rgba(255,255,0,0.5); z-index: 4; top: 60px; left: 60px; }
+.layer5 { background: rgba(255,0,255,0.5); z-index: 5; top: 80px; left: 80px; }
