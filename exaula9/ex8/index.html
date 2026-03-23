@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p class="my-class">Primeiro</p>
+<p class="my-class">Segundo</p>
+
+<button onclick="converter()">Maiúsculas</button>
+
+<script>
+function converter() {
+ var elementos = document.getElementsByClassName("my-class");
+
+ for (var i = 0; i < elementos.length; i++) {
+  elementos[i].textContent =
+  elementos[i].textContent.toUpperCase();
+ }
+}
+</script>
+
+</body>
+</html>
