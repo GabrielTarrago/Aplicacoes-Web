@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios JS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Exercício</h1>
+
+    <!-- Conteúdo muda em cada exercício -->
+
+    <script src="script.js"></script>
+</body>
+</html>
+styles.css
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+
+input, button {
+    margin: 5px;
+    padding: 5px;
+}
+1
+script.js
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 !== 0) {
+        console.log(i);
+    }
+}
+2
+let soma = 0;
+
+for (let i = 1; i <= 100; i++) {
+    soma += i;
+}
+
+alert(soma);
+3
+index.html (parte do body)
+<input type="text" id="nome" placeholder="Nome">
+<input type="text" id="idade" placeholder="Idade">
+<button onclick="mostrar()">Enviar</button>
+
+<p id="resultado"></p>
+script.js
+function mostrar() {
+    let nome = document.getElementById("nome").value;
+    let idade = document.getElementById("idade").value;
+
+    document.getElementById("resultado").innerText =
+        nome + " tem " + idade + " anos";
+}
+4
+
+<input type="text" id="n1">
+<input type="text" id="n2">
+<button onclick="somar()">Somar</button>
+
+<p id="res"></p>
+JS
+function somar() {
+    let n1 = Number(document.getElementById("n1").value);
+    let n2 = Number(document.getElementById("n2").value);
+
+    let soma = n1 + n2;
+
+    document.getElementById("res").innerText = soma;
+}
+5
+HTML
+<input type="text" id="n1">
+<input type="text" id="n2">
+<button id="btn" onclick="somar()">Somar</button>
+
+<p id="res"></p>
+JS
+function somar() {
+    let n1 = Number(document.getElementById("n1").value);
+    let n2 = Number(document.getElementById("n2").value);
+
+    let soma = n1 + n2;
+
+    document.getElementById("res").innerText = soma;
+
+    let botao = document.getElementById("btn");
+
+    if (soma % 2 === 0) {
+        botao.style.backgroundColor = "blue";
+    } else {
+        botao.style.backgroundColor = "green";
+    }
+}
+6
+HTML
+<input type="number" id="num" min="1" max="10">
+<button onclick="tabuada()">Mostrar</button>
+
+<p id="tab"></p>
+JS
+function tabuada() {
+    let num = Number(document.getElementById("num").value);
+    let texto = "";
+
+    for (let i = 1; i <= 10; i++) {
+        texto += num + " x " + i + " = " + (num * i) + "<br>";
+    }
+
+    document.getElementById("tab").innerHTML = texto;
+}
+ 7
+HTML
+<button onclick="gerar()">Gerar número</button>
+JS
+function gerar() {
+    let numero = Math.floor(Math.random() * 100) + 1;
+    alert(numero);
+}
