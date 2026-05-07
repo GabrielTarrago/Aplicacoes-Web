@@ -1,7 +1,5 @@
 App.css
 
-Crie/edite o src/App.css
-
 #root {
   min-height: 100vh;
   display: flex;
@@ -17,8 +15,6 @@ footer {
   margin-top: auto;
 }
 CadastroProfessor.jsx
-
-Crie o arquivo src/CadastroProfessor.jsx
 
 export default function CadastroProfessor() {
   return (
@@ -61,8 +57,6 @@ export default function CadastroProfessor() {
   );
 }
 App.jsx atualizado
-
-Substitua pelo seguinte:
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
