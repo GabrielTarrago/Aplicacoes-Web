@@ -1,0 +1,134 @@
+main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+)
+App.jsx
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import Cadastro from './pages/Cadastro'
+
+function App() {
+  return (
+    <BrowserRouter>
+      <nav style={{ marginBottom: '20px' }}>
+        <Link to="/">Home</Link> |{' '}
+        <Link to="/cadastro">Cadastro</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
+pages/Home.jsx
+function Home() {
+  return (
+    <div>
+      <h1>Página Home</h1>
+      <p>Bem-vindo ao sistema.</p>
+    </div>
+  )
+}
+
+export default Home
+pages/Cadastro.jsx
+import { useState } from 'react'
+
+function Cadastro() {
+  const [form, setForm] = useState({
+    nome: '',
+    cpf: '',
+    telefone: '',
+    rg: '',
+    endereco: ''
+  })
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  function cadastrar(e) {
+    e.preventDefault()
+    alert('Cadastro realizado com sucesso!')
+    console.log(form)
+  }
+
+  return (
+    <div>
+      <h1>Cadastro</h1>
+
+      <form onSubmit={cadastrar}>
+        <div>
+          <label>Nome:</label><br />
+          <input
+            type="text"
+            name="nome"
+            value={form.nome}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label>CPF:</label><br />
+          <input
+            type="text"
+            name="cpf"
+            value={form.cpf}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label>Telefone:</label><br />
+          <input
+            type="text"
+            name="telefone"
+            value={form.telefone}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label>RG:</label><br />
+          <input
+            type="text"
+            name="rg"
+            value={form.rg}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label>Endereço:</label><br />
+          <input
+            type="text"
+            name="endereco"
+            value={form.endereco}
+            onChange={handleChange}
+          />
+        </div>
+
+        <br />
+
+        <button type="submit">
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  )
+}
+
+export default Cadastro
